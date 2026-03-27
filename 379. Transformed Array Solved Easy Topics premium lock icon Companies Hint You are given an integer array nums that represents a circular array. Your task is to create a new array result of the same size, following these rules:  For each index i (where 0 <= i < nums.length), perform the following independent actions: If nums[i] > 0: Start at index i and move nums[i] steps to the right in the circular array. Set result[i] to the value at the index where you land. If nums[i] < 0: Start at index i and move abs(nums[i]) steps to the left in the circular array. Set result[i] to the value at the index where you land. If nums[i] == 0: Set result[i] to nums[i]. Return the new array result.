@@ -1,0 +1,21 @@
+class Solution {
+    public int[] constructTransformedArray(int[] nums) {
+        
+        int n = nums.length;
+        int index1 =0;
+        int index2 =0;
+        int []result = new int[n];
+
+        for(int i =0;i<n;i++){
+
+            index1 = (nums[i]+i)%n;
+            if(index1<0){
+                index2 =(index1+n);
+                result[i]=nums[index2];
+            }else
+            result[i]=nums[index1];
+
+        }
+        return result ;
+    }
+}
