@@ -1,0 +1,32 @@
+class Solution {
+    public double minimumAverage(int[] nums) {
+
+        Arrays.sort(nums);
+        
+        int n = nums.length;
+
+        double []average = new double[n/2];
+    
+        int start = 0;
+        int end =n-1;
+
+        double minAvg = Double.MAX_VALUE;
+
+        for(int i =0;i<n/2;i++){
+
+            average[i] = (nums[start]+nums[end])/2.0;
+            start++;
+            end--;
+
+            minAvg =Math.min(minAvg,average[i]);
+            
+
+        }
+        
+
+        
+    return minAvg;
+        
+    }
+
+}
